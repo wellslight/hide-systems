@@ -16,7 +16,7 @@ Part 1: Hiding the System
 
 Each system is listed and looks like this:
 
-<system>
+	<system>
     <name>nes</name>
     <fullname>Nintendo Entertainment System</fullname>
     <path>/home/pi/RetroPie/roms/nes</path>
@@ -24,7 +24,7 @@ Each system is listed and looks like this:
     <command>/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ nes %ROM%</command>
     <platform>nes</platform>
     <theme>nes</theme>
-</system>
+	</system>
 
 We want to add a shell script in the gamelist that allows us to hide the system. For the script to show up in the list of games we need to add ".sh .SH" to the extension list, so it looks like this: <extension>.nes .zip .NES .ZIP .sh .SH</extension>
 
@@ -83,7 +83,7 @@ OPTIONAL (just for looks):
 If you want to make it so your retropie menu systems folder "restoreXXX" files have pictures you can go to
 /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml and add the following for each "restoreXXX.sh" script you make.
 
-<game>
+	<game>
 		<path>./systems/restorenes.sh</path>
 		<name>Restore Nintendo (NES)</name>
 		<desc>Restore hidden system</desc>
