@@ -29,10 +29,13 @@ Each system is listed and looks like this:
 We want to add a shell script in the gamelist that allows us to hide the system. For the script to show up in the list of games we need to add ".sh .SH" to the extension list, so it looks like this: <extension>.nes .zip .NES .ZIP .sh .SH</extension>
 
 Step 3. Create a hiddensystems folder (sudo mkdir) in roms: /home/pi/RetroPie/roms/hiddensystems
+
 Step 4. Create a restoresystems folder in roms: /home/pi/RetroPie/roms/restoresystems
+
 Step 5. Create a systems folder in retropiemenu: /home/pi/RetroPie/retropiemenu/systems
+
 Step 6. Now create a shell script (sudo nano) in the system's folder: /home/pi/RetroPie/roms/nes/hidesystem.sh
-		(alternatively you could make a folder ".~/RetroPie/roms/nes/xhidesystem/hidesystem.sh" to store the shell script in so that the hide 		system option is listed at the bottom of the roms and you have to enter the folder before being able to push the hide button.
+(alternatively you could make a folder ".~/RetroPie/roms/nes/xhidesystem/hidesystem.sh" to store the shell script in so that the hide system option is listed at the bottom of the roms and you have to enter the folder before being able to push the hide button.
 
 Copy and paste this script as your hidesystem.sh:
 
@@ -58,7 +61,8 @@ I went in and added a picture/renamed the script in the system menu by going int
 Part 2: Restoring the System
 
 Step 8. Create a shell script (sudo nano) in the restoresystems folder: /home/pi/RetroPie/roms/restoresystems/restorenes.sh
-		This is a location to store all of the shell scripts that restore hidden systems, you don't want them appearing in the retropie menu 			until you've actually hidden the system. This is why this shell script contains the system name in the title (nes), because all the 			systems restore scripts will be stored in this file.
+
+This is a location to store all of the shell scripts that restore hidden systems, you don't want them appearing in the retropie menu until you've actually hidden the system. This is why this shell script contains the system name in the title (nes), because all the systems restore scripts will be stored in this file.
 		
 Copy and paste this script as your restorenes.sh:
 
