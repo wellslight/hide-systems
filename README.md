@@ -9,10 +9,10 @@ TO HAVE A "HIDE SYSTEM" button in the system's menu:
 
 Part 1: Hiding the System
 	
-1. copy /etc/emulationstation to /opt/retropie/configs/all/emulationstation
+Step 1. copy /etc/emulationstation to /opt/retropie/configs/all/emulationstation
     all future edits to es_systems.cfg will be done in /opt/retropie/configs/all/emulationstation
 
-2. Go into /opt/retropie/configs/all/emulationstation/es_systems.cfg and add ".sh .SH" to the extensions, save and exit. 
+Step 2. Go into /opt/retropie/configs/all/emulationstation/es_systems.cfg and add ".sh .SH" to the extensions, save and exit. 
 
 Each system is listed and looks like this:
 
@@ -28,10 +28,10 @@ Each system is listed and looks like this:
 
 We want to add a shell script in the gamelist that allows us to hide the system. For the script to show up in the list of games we need to add ".sh .SH" to the extension list, so it looks like this: <extension>.nes .zip .NES .ZIP .sh .SH</extension>
 
-3. Create a hiddensystems folder (sudo mkdir) in roms: /home/pi/RetroPie/roms/hiddensystems
-4. Create a restoresystems folder in roms: /home/pi/RetroPie/roms/restoresystems
-5. Create a systems folder in retropiemenu: /home/pi/RetroPie/retropiemenu/systems
-6. Now create a shell script (sudo nano) in the system's folder: /home/pi/RetroPie/roms/nes/hidesystem.sh
+Step 3. Create a hiddensystems folder (sudo mkdir) in roms: /home/pi/RetroPie/roms/hiddensystems
+Step 4. Create a restoresystems folder in roms: /home/pi/RetroPie/roms/restoresystems
+Step 5. Create a systems folder in retropiemenu: /home/pi/RetroPie/retropiemenu/systems
+Step 6. Now create a shell script (sudo nano) in the system's folder: /home/pi/RetroPie/roms/nes/hidesystem.sh
 		(alternatively you could make a folder ".~/RetroPie/roms/nes/xhidesystem/hidesystem.sh" to store the shell script in so that the hide 		system option is listed at the bottom of the roms and you have to enter the folder before being able to push the hide button.
 
 Copy and paste this script as your hidesystem.sh:
@@ -44,7 +44,7 @@ Copy and paste this script as your hidesystem.sh:
 This script moves the nes folder to a new "hiddensystems" folder, removing it from visibility in the emulationstation front end.
 It also moves a shell script that we are storing in a "restoresystems" folder over to the restropie menu (we will make this soon and it allows us to move the nes folder back so the system is restored). It then reboots the pi so that the hide takes place immediately.
 
-7. In the terminal give the script permission: 
+Step 7. In the terminal give the script permission: 
 
 			cd /home/pi/RetroPie/roms/nes
 			sudo chmod a+x ./hidesystem.sh
@@ -57,7 +57,7 @@ I went in and added a picture/renamed the script in the system menu by going int
 
 Part 2: Restoring the System
 
-8. Create a shell script (sudo nano) in the restoresystems folder: /home/pi/RetroPie/roms/restoresystems/restorenes.sh
+Step 8. Create a shell script (sudo nano) in the restoresystems folder: /home/pi/RetroPie/roms/restoresystems/restorenes.sh
 		This is a location to store all of the shell scripts that restore hidden systems, you don't want them appearing in the retropie menu 			until you've actually hidden the system. This is why this shell script contains the system name in the title (nes), because all the 			systems restore scripts will be stored in this file.
 		
 Copy and paste this script as your restorenes.sh:
@@ -69,7 +69,7 @@ Copy and paste this script as your restorenes.sh:
 			
 This script moves the nes folder from the hiddensystems folder back into the roms folder where emulationstation can detect it again and show the system in the front end. It also moves itself (the restore shell script) back into the folder storing all of the restore shell scripts so that it is no longer an option in the retropie menu. It then reboots the pi so the changes take effect immediately.
 
-9. In the terminal give the script permission:
+Step 9. In the terminal give the script permission:
 
 			cd /home/pi/RetroPie/roms/restoresystems
 			sudo chmod a+x ./restorenes.sh
