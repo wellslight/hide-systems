@@ -5,8 +5,6 @@ created by wellslight
 This is a walkthrough on how to create a functional "hide system" button in the emulationstation front end and a "restore system" in the retropie menu. The walkthrough will show you how to do this with one system, NES. To make this with other systems simply edit the places that you see "nes" (examples: ~/roms/nes , restorenes.sh). I recommend working through this with one system completely to make sure everything is working, so you don't have to edit several files if you find an error.
 
 
-TO HAVE A "HIDE SYSTEM" button in the system's menu:
-
 Part 1: Hiding the System
 	
 Step 1. copy /etc/emulationstation to /opt/retropie/configs/all/emulationstation
@@ -98,3 +96,5 @@ If you want to make it so your retropie menu systems folder "restoreXXX" files h
 	</game>
 	
 Create an "art" folder: "home/pi/RetroPie/roms/art" and store your art here.
+
+You could also alternatively have the "hide systems" option in the retropie menu as well. This would condense hiding the system and restoring the system all to the retropie menu. To do this you would simply change your hide shell script to hidesystemnes.sh (specify the system since all will be stored here), and create a folder in /home/pi/RetroPie/ for hide systems, then store those scripts here.
