@@ -100,3 +100,4 @@ Create an "art" folder: "home/pi/RetroPie/roms/art" and store your art here.
 You could also alternatively have the "hide systems" option in the retropie menu as well. This would condense hiding the system and restoring the system all to the retropie menu. To do this you would simply change your hide shell script to hidesystemnes.sh (specify the system since all will be stored here), and create a folder in /home/pi/RetroPie/ for hide systems, then store those scripts here.
 
 You can see the process here: https://www.reddit.com/r/RetroPie/comments/5w6k9e/customized_retropie_emulationstation_to_be/
+				http://imgur.com/gallery/GE8Rl
