@@ -1,0 +1,13 @@
+#copy /etc/emulationstation to /opt/retropie/configs/all/emulationstation 
+
+#in /opt/retropie/configs/all/emulationstation/es_systems.cfg edit your system to have ".sh .SH" in extensions
+
+<system>
+<name>nes</name>
+<fullname>Nintendo Entertainment System</fullname>
+<path>/home/pi/RetroPie/roms/nes</path>
+<extension>.nes .zip .sh .NES .ZIP .SH</ex ension>
+<command>/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ nes %ROM%</command>
+<platform>nes</platform>
+<theme>nes</theme>
+</system>
