@@ -1,0 +1,7 @@
+#permission for shell scripts to move files around - enter these into the terminal
+
+cd /home/pi/RetroPie/roms/nes
+sudo chmod a+x ./hidesystem.sh
+
+cd /home/pi/RetroPie/roms/restoresystems
+sudo chmod a+x ./restorenes.sh
